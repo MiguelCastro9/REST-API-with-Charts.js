@@ -19,4 +19,29 @@ public class PesquisaService {
 
         pesquisaRepository.save(pesquisa);
     }
+
+    public Integer totalPreferenciaComedia() {
+
+        return pesquisaRepository.queryTotalPreferenciaComedia();
+    }
+
+    public Integer totalPreferenciaRomance() {
+
+        return pesquisaRepository.queryTotalPreferenciaRomance();
+    }
+
+    public Integer totalPreferenciaAcao() {
+
+        return pesquisaRepository.queryTotalPreferenciaAcao();
+    }
+
+    public Integer totalPreferenciaTerror() {
+
+        return pesquisaRepository.queryTotalPreferenciaTerror();
+    }
+
+    public Integer totalPreferenciaDrama() {
+
+        return pesquisaRepository.queryTotalPreferenciaDrama();
+    }
 }
