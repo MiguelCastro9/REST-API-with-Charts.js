@@ -1,1 +1,45 @@
-<p>pesquisa works!</p>
+<div class="container-fluid-nav text-center">
+  <nav class="navbar-dark bg-dark">
+    <span class="navbar-text">
+      Pesquisa de preferência por filmes
+    </span>
+  </nav>
+</div>
+<br>
+<div class="container">
+  <div class="card">
+    <div class="card-header">Formulário de pesquisa</div>
+    <div class="card-body">
+      <form>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="voluntario">Voluntário:</label>
+            <input type="text" id="voluntario" name="voluntario" [(ngModel)]="pesquisa.voluntario" maxlength="45" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="preferencia">Preferência:</label>
+            <select class="form-control" id="preferencia" name="preferencia" [(ngModel)]="pesquisa.preferencia">
+              <option ngValue="comedia">Comédia</option>
+              <option ngValue="romance">Romance</option>
+              <option ngValue="acao">Ação</option>
+              <option ngValue="terror">Terror</option>
+              <option ngValue="drama">Drama</option>
+            </select>
+          </div>
+        </div>
+        <button (click)="registrar(pesquisa);" class="btn btn-outline-primary">Registrar</button>
+      </form>
+    </div>
+  </div>
+  <br>
+  <div class="card">
+    <div class="card-header">Gráfico da pesquisa</div>
+    <div class="card-body">
+
+    </div>
+  </div>
+</div>
+
+

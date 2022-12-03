@@ -1,3 +1,5 @@
+import { PesquisaService } from './../service/pesquisa.service';
+import { Pesquisa } from './../model/pesquisa';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PesquisaComponent implements OnInit {
 
-  constructor() { }
+  pesquisa = new Pesquisa();
+
+  constructor(private pesquisaService: PesquisaService) { }
 
   ngOnInit(): void {
+  }
+
+  registrar(pesquisa: Pesquisa) {
+
+    this.pesquisaService.registrar(pesquisa).subscribe(dados => {
+      console.log(dados);
+
+    });
   }
 
 }

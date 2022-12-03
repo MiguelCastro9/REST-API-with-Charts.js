@@ -7,9 +7,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PesquisaService {
 
-  url!: "http://localhost:8080";
+  url = "http://localhost:8080/pesquisa";
 
 constructor(private http: HttpClient) { }
+
+  registrar(pesquisa: Pesquisa){
+    return this.http.post<Pesquisa>(this.url + '/registrar', pesquisa);
+  }
 
   totalComedia(){
     return this.http.get<number>(this.url + '/comedia');
