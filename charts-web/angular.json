@@ -67,7 +67,8 @@
               "browserTarget": "charts-web:build:production"
             },
             "development": {
-              "browserTarget": "charts-web:build:development"
+              "browserTarget": "charts-web:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
