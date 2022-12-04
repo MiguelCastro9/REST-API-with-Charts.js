@@ -1,3 +1,10 @@
 span {
   color: #fff !important;
 }
+
+canvas {
+  margin: auto;
+  width: 300px !important;
+  height: 300px !important;
+
+}

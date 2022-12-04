@@ -45,7 +45,7 @@ public class PesquisaController {
     }
 
     @GetMapping("/comedia")
-    public ResponseEntity<?> totalPreferenciaComedia() {
+    public ResponseEntity<Integer> totalPreferenciaComedia() {
 
         try {
 
@@ -53,14 +53,14 @@ public class PesquisaController {
 
         } catch (Exception e) {
 
-            return new ResponseEntity<>("Ocorreu um erro ao retornar o total da pesquisa por comédia.", HttpStatus.CONFLICT);
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
 
-        return new ResponseEntity<>("Total da pesquisa por comédia retornado com sucesso!", HttpStatus.OK);
+        return new ResponseEntity<>(pesquisaService.totalPreferenciaComedia(), HttpStatus.OK);
     }
 
     @GetMapping("/romance")
-    public ResponseEntity<?> totalPreferenciaRomance() {
+    public ResponseEntity<Integer> totalPreferenciaRomance() {
 
         try {
 
@@ -68,14 +68,14 @@ public class PesquisaController {
 
         } catch (Exception e) {
 
-            return new ResponseEntity<>("Ocorreu um erro ao retornar o total da pesquisa por romance.", HttpStatus.CONFLICT);
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
 
-        return new ResponseEntity<>("Total da pesquisa por romance retornado com sucesso!", HttpStatus.OK);
+        return new ResponseEntity<>(pesquisaService.totalPreferenciaRomance(), HttpStatus.OK);
     }
     
     @GetMapping("/acao")
-    public ResponseEntity<?> totalPreferenciaAcao() {
+    public ResponseEntity<Integer> totalPreferenciaAcao() {
 
         try {
 
@@ -83,10 +83,10 @@ public class PesquisaController {
 
         } catch (Exception e) {
 
-            return new ResponseEntity<>("Ocorreu um erro ao retornar o total da pesquisa por ação.", HttpStatus.CONFLICT);
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
 
-        return new ResponseEntity<>("Total da pesquisa por ação retornado com sucesso!", HttpStatus.OK);
+        return new ResponseEntity<>(pesquisaService.totalPreferenciaAcao(), HttpStatus.OK);
     }
     
     @GetMapping("/terror")
@@ -98,10 +98,10 @@ public class PesquisaController {
 
         } catch (Exception e) {
 
-            return new ResponseEntity<>("Ocorreu um erro ao retornar o total da pesquisa por terror.", HttpStatus.CONFLICT);
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
 
-        return new ResponseEntity<>("Total da pesquisa por terror retornado com sucesso!", HttpStatus.OK);
+        return new ResponseEntity<>(pesquisaService.totalPreferenciaTerror(), HttpStatus.OK);
     }
     
     @GetMapping("/drama")
@@ -113,9 +113,9 @@ public class PesquisaController {
 
         } catch (Exception e) {
 
-            return new ResponseEntity<>("Ocorreu um erro ao retornar o total da pesquisa por drama.", HttpStatus.CONFLICT);
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
 
-        return new ResponseEntity<>("Total da pesquisa por drama retornado com sucesso!", HttpStatus.OK);
+        return new ResponseEntity<>(pesquisaService.totalPreferenciaDrama(), HttpStatus.OK);
     }
 }
