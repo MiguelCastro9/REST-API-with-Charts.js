@@ -26,5 +26,4 @@ public interface PesquisaRepository extends JpaRepository<Pesquisa, Long> {
 
     @Query(value = "SELECT COUNT(*) FROM pesquisa WHERE preferencia = 'drama'", nativeQuery = true)
     public Integer queryTotalPreferenciaDrama();
-
 }

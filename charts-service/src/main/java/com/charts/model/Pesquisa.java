@@ -45,5 +45,4 @@ public class Pesquisa implements Serializable {
     public void setPreferencia(String preferencia) {
         this.preferencia = preferencia;
     }
-
 }

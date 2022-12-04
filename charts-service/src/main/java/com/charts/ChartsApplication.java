@@ -9,5 +9,4 @@ public class ChartsApplication {
     public static void main(String[] args) {
         SpringApplication.run(ChartsApplication.class, args);
     }
-
 }
