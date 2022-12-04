@@ -10,18 +10,36 @@ import { Component, OnInit } from '@angular/core';
 export class PesquisaComponent implements OnInit {
 
   pesquisa = new Pesquisa();
+  successMensagem = false;
+  alertMensagem = '';
 
   constructor(private pesquisaService: PesquisaService) { }
 
   ngOnInit(): void {
   }
 
+  validarFormulario() {
+
+    if (!this.pesquisa.voluntario) {
+      this.alertMensagem = 'Campo voluntário é obrigatório.';
+      return false;
+    }
+    if (!this.pesquisa.preferencia) {
+      this.alertMensagem = 'Campo preferência é obrigatório.';
+      return false;
+    }
+    return true;
+  }
+
   registrar(pesquisa: Pesquisa) {
 
-    this.pesquisaService.registrar(pesquisa).subscribe(dados => {
-      console.log(dados);
+    if (!this.validarFormulario()) {
+      return;
+    }
 
-    });
+    this.pesquisaService.registrar(pesquisa).subscribe();
+    this.pesquisa = new Pesquisa();
+    this.successMensagem = true;
   }
 
 }

@@ -1,24 +1,23 @@
-<div class="container-fluid-nav text-center">
-  <nav class="navbar-dark bg-dark">
-    <span class="navbar-text">
-      Pesquisa de preferência por filmes
-    </span>
-  </nav>
-</div>
-<br>
+<br><br>
 <div class="container">
+  <div *ngIf="successMensagem" class="alert alert-success" role="alert">
+    Pesquisa registrada com sucesso!
+  </div>
+  <div *ngIf="alertMensagem" class="alert alert-danger" role="alert">
+    {{alertMensagem}}
+  </div>
   <div class="card">
-    <div class="card-header">Formulário de pesquisa</div>
+    <div class="card-header text-center">Formulário de pesquisa</div>
     <div class="card-body">
       <form>
         <div class="row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-12">
             <label for="voluntario">Voluntário:</label>
             <input type="text" id="voluntario" name="voluntario" [(ngModel)]="pesquisa.voluntario" maxlength="45" class="form-control">
           </div>
         </div>
         <div class="row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-12">
             <label for="preferencia">Preferência:</label>
             <select class="form-control" id="preferencia" name="preferencia" [(ngModel)]="pesquisa.preferencia">
               <option ngValue="comedia">Comédia</option>
@@ -29,11 +28,13 @@
             </select>
           </div>
         </div>
-        <button (click)="registrar(pesquisa);" class="btn btn-outline-primary">Registrar</button>
+        <br>
+        <a (click)="registrar(pesquisa);" class="btn btn-outline-primary btn-block">Registrar</a>
       </form>
+      <br>
     </div>
   </div>
-  <br>
+  <br><br><br><br>
   <div class="card">
     <div class="card-header">Gráfico da pesquisa</div>
     <div class="card-body">
@@ -41,5 +42,6 @@
     </div>
   </div>
 </div>
+
 
 
