@@ -2,9 +2,8 @@ span {
   color: #fff !important;
 }
 
-canvas {
+.graficoPizzaStyle {
   margin: auto;
   width: 300px !important;
   height: 300px !important;
-
 }

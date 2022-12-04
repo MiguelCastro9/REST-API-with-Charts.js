@@ -73,7 +73,7 @@ public class PesquisaController {
 
         return new ResponseEntity<>(pesquisaService.totalPreferenciaRomance(), HttpStatus.OK);
     }
-    
+
     @GetMapping("/acao")
     public ResponseEntity<Integer> totalPreferenciaAcao() {
 
@@ -88,7 +88,7 @@ public class PesquisaController {
 
         return new ResponseEntity<>(pesquisaService.totalPreferenciaAcao(), HttpStatus.OK);
     }
-    
+
     @GetMapping("/terror")
     public ResponseEntity<?> totalPreferenciaTerror() {
 
@@ -103,7 +103,7 @@ public class PesquisaController {
 
         return new ResponseEntity<>(pesquisaService.totalPreferenciaTerror(), HttpStatus.OK);
     }
-    
+
     @GetMapping("/drama")
     public ResponseEntity<?> totalPreferenciaDrama() {
 
